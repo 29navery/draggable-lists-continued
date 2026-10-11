@@ -65,15 +65,17 @@ jar { from("LICENSE.md") }
     exclude "**/PackSelectionModelMixin.java", "**/ResourcePackOrganizerDuckProvider.java"
     into(layout.buildDirectory.dir("generated/java"))
     inputs.property("minecraft_version", minecraft_version)
+    inputs.file(buildFile)
     filter { String line ->
         if (minecraft_version.startsWith("1.")) {
             line = line.replace("GuiGraphicsExtractor", "GuiGraphics")
-                       .replace("me.shedaniel.autoconfig.AutoConfigClient.getConfigScreen", "AutoConfig.getConfigScreen")
                        .replace("extractListItems", "renderListItems")
                        .replace("extractItem", "renderItem")
                        .replace("extractWidgetRenderState", "renderWidget")
                        .replace("extractContent", "renderContent")
-                       .replace("Identifier", "ResourceLocation")
+        }
+        if (minecraft_version in ["1.21.9", "1.21.10"]) {
+            line = line.replace("Identifier", "ResourceLocation").replace("me.shedaniel.autoconfig.AutoConfigClient.getConfigScreen", "AutoConfig.getConfigScreen")
         }
         if (minecraft_version != "26.3") {
             line = line.replace("com.mojang.renderpearl.api.pipeline", "com.mojang.blaze3d.pipeline")

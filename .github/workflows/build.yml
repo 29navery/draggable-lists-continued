@@ -3,6 +3,10 @@ name: Build all Minecraft releases
 on:
   push:
     branches: [main]
+    paths-ignore:
+      - "releases/**"
+      - "docs/upstream.bundle"
+      - "README.md"
   workflow_dispatch:
 
 permissions:
@@ -28,4 +32,3 @@ jobs:
           name: minecraft-${{ matrix.minecraft }}
           path: build/${{ matrix.minecraft }}/libs/*.jar
           if-no-files-found: error
-

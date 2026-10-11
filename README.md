@@ -40,4 +40,4 @@ The GitHub Actions matrix builds all eight targets, applies every required mixin
 - Original logo: [CarbonGhost](https://github.com/CarbonGhost).
 - Original license retained in [LICENSE.md](LICENSE.md).
 
-The existing destination repository is a continuation repository, rather than a GitHub-managed fork. The original Quilt and NeoForge source directories are retained for reference; this continuation's current build targets Fabric.
+The existing destination repository is a continuation repository, rather than a GitHub-managed fork. The complete upstream main history and release tags, with their original commit IDs, are preserved in [docs/upstream.bundle](docs/upstream.bundle). The original Quilt and NeoForge source directories are retained for reference; this continuation's current build targets Fabric.
