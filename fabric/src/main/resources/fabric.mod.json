@@ -1,0 +1,41 @@
+{
+  "schemaVersion": 1,
+  "id": "draggable_lists",
+  "version": "${version}",
+  "name": "Draggable Lists Continued",
+  "description": "Drag to reorder resource packs, datapacks and multiplayer servers.",
+  "authors": [
+    "MrMelon54",
+    "nicky_lul"
+  ],
+  "contact": {
+    "homepage": "https://mrmelon54.com/minecraft/draggable-lists",
+    "sources": "https://github.com/29navery/draggable-lsits-continued",
+    "issues": "https://github.com/29navery/draggable-lsits-continued/issues"
+  },
+  "license": "LGPL-3.0-only",
+  "icon": "icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "com.mrmelon54.DraggableLists.fabric.DraggableListsFabric"
+    ],
+    "modmenu": [
+      "com.mrmelon54.DraggableLists.fabriclike.ModMenuIntegration"
+    ]
+  },
+  "mixins": [
+    "draggable_lists.mixins.json",
+    "draggable_lists-common.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "=${minecraft_version}",
+    "java": ">=${java_version}",
+    "cloth-config": ">=${cloth_version}"
+  },
+  "suggests": {
+    "modmenu": "*"
+  },
+  "accessWidener": "draggable_lists.accesswidener"
+}
